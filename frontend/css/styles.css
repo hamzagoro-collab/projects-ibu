@@ -1,0 +1,1216 @@
+
+/* 1. CSS VARIABLES & GLOBAL STYLES */
+
+:root {
+    --bg: #0c1018;
+    --panel: #121925;
+    --panel-2: #171f2d;
+    --line: #263143;
+    --text: #eef3fb;
+    --muted: #8995a9;
+    --purple: #a78bfa;
+    --purple-2: #7857e8;
+    --green: #72e0ba;
+    --orange: #f5b66b;
+    --red: #f18d9b;
+    --radius: 16px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.app-shell {
+    min-height: 100vh;
+}
+
+
+/* 2. SIDEBAR & BRANDING */
+
+.sidebar {
+    width: 244px;
+    position: fixed;
+    inset: 0 auto 0 0;
+    background: #0e141e;
+    border-right: 1px solid #202a39;
+    padding: 27px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 0 12px;
+    color: #fff;
+    text-decoration: none;
+    font: 700 20px "Space Grotesk", sans-serif;
+    letter-spacing: -0.7px;
+}
+
+.brand-mark {
+    height: 32px;
+    width: 32px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #b6a0ff, #7958e9);
+    display: grid;
+    place-items: center;
+    color: #141021;
+    font-size: 21px;
+}
+
+.brand-light {
+    color: #a99bdc;
+}
+
+.side-label {
+    font-size: 10px;
+    letter-spacing: 1.7px;
+    color: #69778d;
+    font-weight: 700;
+    margin: 43px 12px 13px;
+}
+
+.main-nav {
+    display: grid;
+    gap: 6px;
+}
+
+.nav-link {
+    border: 0;
+    background: transparent;
+    color: #97a3b7;
+    padding: 12px 13px;
+    border-radius: 10px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: 0.18s;
+}
+
+.nav-link:hover {
+    background: #192231;
+    color: #fff;
+}
+
+.nav-link.active {
+    background: #28213f;
+    color: #c7b7ff;
+    box-shadow: inset 3px 0 #a78bfa;
+}
+
+.nav-icon {
+    font-size: 19px;
+    width: 20px;
+    text-align: center;
+}
+
+.nav-count {
+    margin-left: auto;
+    border-radius: 7px;
+    background: #303044;
+    color: #b9a9fa;
+    padding: 3px 7px;
+    font-size: 11px;
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+}
+
+.mini-card {
+    padding: 16px;
+    border: 1px solid #2a2d43;
+    background: linear-gradient(145deg, #1d1d31, #151b28);
+    border-radius: 14px;
+    margin: 0 3px 20px;
+}
+
+.mini-orb {
+    width: 31px;
+    height: 31px;
+    border-radius: 10px;
+    background: #34294f;
+    color: #c4b2ff;
+    display: grid;
+    place-items: center;
+    margin-bottom: 14px;
+}
+
+.mini-card strong {
+    font-size: 12px;
+}
+
+.mini-card p {
+    font-size: 11px;
+    color: #8994a8;
+    line-height: 1.6;
+}
+
+.text-button {
+    background: none;
+    border: 0;
+    padding: 4px 0;
+    color: #c0adff;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.text-button span {
+    margin-left: 7px;
+}
+
+.user-mini {
+    border-top: 1px solid #252e3d;
+    padding: 18px 7px 4px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.avatar {
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #d9b6ff, #8066e8);
+    color: #201537;
+    font-weight: 700;
+}
+
+.user-mini-text {
+    display: grid;
+    gap: 4px;
+}
+
+.user-mini-text strong {
+    font-size: 12px;
+}
+
+.user-mini-text span {
+    font-size: 10px;
+    color: #7e8ba0;
+}
+
+.dots {
+    margin-left: auto;
+    color: #8390a4;
+    letter-spacing: 2px;
+}
+
+
+/* 3. MAIN LAYOUT & TOP NAVIGATION */
+
+.main-area {
+    margin-left: 244px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.topbar {
+    height: 76px;
+    border-bottom: 1px solid #202a39;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 38px;
+    gap: 20px;
+}
+
+.breadcrumb {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    color: #77849a;
+    font-size: 12px;
+}
+
+.breadcrumb strong {
+    color: #e8edf6;
+    font-weight: 600;
+}
+
+.crumb-sep {
+    color: #3b4658;
+}
+
+.topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.search-box {
+    height: 37px;
+    width: 240px;
+    border: 1px solid #293447;
+    background: #121925;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding: 0 11px;
+    gap: 8px;
+    color: #8290a6;
+}
+
+.search-box span {
+    font-size: 22px;
+}
+
+.search-box input {
+    min-width: 0;
+    width: 100%;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: #eef3fb;
+    font-size: 12px;
+}
+
+.search-box input::placeholder {
+    color: #758197;
+}
+
+.icon-button {
+    position: relative;
+    background: transparent;
+    border: 1px solid #293447;
+    color: #b3bfd1;
+    border-radius: 10px;
+    width: 37px;
+    height: 37px;
+    font-size: 20px;
+}
+
+.icon-button i {
+    position: absolute;
+    right: 7px;
+    top: 7px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #b49aff;
+}
+
+.avatar-small {
+    width: 31px;
+    height: 31px;
+    font-size: 12px;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+.page-content {
+    width: min(1260px, 100%);
+    margin: 0 auto;
+    padding: 31px 38px 45px;
+    flex: 1;
+}
+
+.footer {
+    border-top: 1px solid #202a39;
+    padding: 17px 38px;
+    display: flex;
+    justify-content: space-between;
+    color: #5f6c80;
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+.footer span + span {
+    letter-spacing: 0;
+    font-size: 10px;
+}
+
+.footer-dot {
+    color: #a78bfa;
+    margin: 0 5px;
+}
+
+
+/* 4. PAGE HEADINGS & BUTTONS */
+
+.eyebrow {
+    color: #a995ff;
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.7px;
+}
+
+.page-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.page-heading h1 {
+    font: 600 29px "Space Grotesk", sans-serif;
+    letter-spacing: -1px;
+    margin: 8px 0 7px;
+}
+
+.page-heading p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.primary-button,
+.secondary-button {
+    border: 0;
+    border-radius: 9px;
+    padding: 11px 15px;
+    font-weight: 700;
+    font-size: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    transition: transform 0.15s, filter 0.15s;
+}
+
+.primary-button {
+    background: var(--purple);
+    color: #19142a;
+}
+
+.primary-button:hover {
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+}
+
+.secondary-button {
+    background: #1a2332;
+    border: 1px solid #303b4f;
+    color: #dce3ef;
+}
+
+.full-button {
+    width: 100%;
+    margin-top: 8px;
+}
+
+.quiet-link {
+    border: 0;
+    background: transparent;
+    color: #b7a4ff;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+/* 5. DASHBOARD STATISTICS */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+    margin-bottom: 28px;
+}
+
+.stat-card {
+    border: 1px solid var(--line);
+    background: linear-gradient(140deg, #151e2b, #111722);
+    border-radius: 13px;
+    padding: 17px;
+}
+
+.stat-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #95a1b5;
+    font-size: 11px;
+}
+
+.stat-icon {
+    width: 31px;
+    height: 31px;
+    border-radius: 9px;
+    display: grid;
+    place-items: center;
+    background: #2b2443;
+    color: #bba8ff;
+    font-size: 16px;
+}
+
+.stat-value {
+    font: 600 26px "Space Grotesk", sans-serif;
+    margin: 13px 0 5px;
+}
+
+.stat-note {
+    font-size: 10px;
+    color: #7d8a9f;
+}
+
+.stat-note .up {
+    color: var(--green);
+}
+
+.section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.section-head h2 {
+    font: 600 16px "Space Grotesk", sans-serif;
+    margin: 0;
+}
+
+
+/* 6. GAME LIBRARY & GAME CARDS */
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.game-card {
+    min-width: 0;
+    border: 1px solid #273244;
+    background: #131b27;
+    border-radius: 13px;
+    overflow: hidden;
+    transition: transform 0.18s, border-color 0.18s;
+}
+
+.game-card:hover {
+    transform: translateY(-3px);
+    border-color: #65529b;
+}
+
+.game-cover {
+    height: 135px;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 13px;
+    overflow: hidden;
+    background: linear-gradient(145deg, #46395e, #202b43);
+}
+
+.game-cover::before,
+.game-cover::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(1px);
+}
+
+.game-cover::before {
+    width: 150px;
+    height: 150px;
+    right: -22px;
+    top: -48px;
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.game-cover::after {
+    width: 100px;
+    height: 100px;
+    left: -18px;
+    bottom: -60px;
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.cover-symbol {
+    position: absolute;
+    right: 13px;
+    top: 5px;
+    font: 700 66px "Space Grotesk", sans-serif;
+    color: rgba(255, 255, 255, 0.23);
+    z-index: 1;
+}
+
+.cover-label {
+    position: relative;
+    z-index: 2;
+    font: 700 16px "Space Grotesk", sans-serif;
+    text-shadow: 0 2px 8px #0008;
+    max-width: 90%;
+}
+
+/* Individual game cover themes */
+
+.cover-elden {
+    background: linear-gradient(145deg, #786345, #242b29);
+}
+
+.cover-cyber {
+    background: linear-gradient(145deg, #8b4b67, #292344);
+}
+
+.cover-zelda {
+    background: linear-gradient(145deg, #658b6a, #243c42);
+}
+
+.cover-hades {
+    background: linear-gradient(145deg, #a45b39, #42253c);
+}
+
+.cover-stardew {
+    background: linear-gradient(145deg, #6d9a77, #2e5361);
+}
+
+.cover-portal {
+    background: linear-gradient(145deg, #648aaf, #26334d);
+}
+
+.cover-hollow {
+    background: linear-gradient(145deg, #4e7e89, #202c43);
+}
+
+.cover-witcher {
+    background: linear-gradient(145deg, #8b7968, #313743);
+}
+
+.game-info {
+    padding: 12px;
+}
+
+.game-title {
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 6px;
+}
+
+.game-meta {
+    color: #7f8ba0;
+    font-size: 10px;
+    display: flex;
+    justify-content: space-between;
+    gap: 6px;
+}
+
+.status {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    border-radius: 5px;
+    padding: 5px 7px;
+    margin-top: 11px;
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.status::before {
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.status-playing {
+    background: #20352f;
+    color: #79dcb8;
+}
+
+.status-completed {
+    background: #28233f;
+    color: #b9a6ff;
+}
+
+.status-want {
+    background: #3b3023;
+    color: #f0bb76;
+}
+
+
+/* 7. DASHBOARD CONTENT & ACTIVITY */
+
+.content-two {
+    display: grid;
+    grid-template-columns: minmax(0, 1.55fr) minmax(240px, 1fr);
+    gap: 18px;
+    margin-top: 28px;
+}
+
+.panel {
+    border: 1px solid var(--line);
+    background: #121925;
+    border-radius: 13px;
+    padding: 19px;
+}
+
+.panel h2 {
+    font: 600 15px "Space Grotesk", sans-serif;
+    margin: 0 0 17px;
+}
+
+.activity-list {
+    display: grid;
+    gap: 17px;
+}
+
+.activity-item {
+    display: flex;
+    gap: 11px;
+    align-items: center;
+}
+
+.activity-thumb {
+    width: 39px;
+    height: 39px;
+    border-radius: 9px;
+    display: grid;
+    place-items: center;
+    font: 700 13px "Space Grotesk", sans-serif;
+    color: #fff;
+    flex-shrink: 0;
+}
+
+.activity-copy {
+    min-width: 0;
+    flex: 1;
+}
+
+.activity-copy strong {
+    font-size: 11px;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.activity-copy span {
+    font-size: 10px;
+    color: #8190a5;
+}
+
+.activity-time {
+    font-size: 10px;
+    color: #6f7b90;
+    white-space: nowrap;
+}
+
+.progress-row {
+    margin: 17px 0;
+}
+
+.progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    margin-bottom: 8px;
+}
+
+.progress-label span + span {
+    color: #8996aa;
+}
+
+.progress-track {
+    height: 6px;
+    background: #263041;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 20px;
+    background: linear-gradient(90deg, #8163e9, #c0a6ff);
+}
+
+.api-note {
+    margin-top: 18px;
+    padding: 14px;
+    border: 1px dashed #45405f;
+    background: #1a1b2a;
+    border-radius: 11px;
+    display: flex;
+    gap: 11px;
+    align-items: flex-start;
+}
+
+.api-note .spark {
+    color: #b9a5ff;
+    font-size: 18px;
+}
+
+.api-note strong {
+    font-size: 11px;
+}
+
+.api-note p {
+    margin: 5px 0 0;
+    font-size: 10px;
+    color: #8e9bb0;
+    line-height: 1.5;
+}
+
+
+/* 8. TOOLBAR, FILTERS & LIBRARY */
+
+.toolbar {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.filter-select {
+    border: 1px solid #2c384b;
+    border-radius: 9px;
+    background: #131b27;
+    color: #d7dfeb;
+    padding: 10px 12px;
+    font-size: 11px;
+    outline: none;
+}
+
+.toolbar-spacer {
+    flex: 1;
+}
+
+.library-grid {
+    margin-bottom: 20px;
+}
+
+.empty-state {
+    border: 1px dashed #354157;
+    border-radius: 13px;
+    padding: 35px;
+    text-align: center;
+    color: #8491a6;
+    grid-column: 1 / -1;
+}
+
+.empty-state strong {
+    display: block;
+    color: #e7edf8;
+    margin-bottom: 7px;
+}
+
+
+/*  9. PROFILE PAGE */
+
+.profile-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 1.5fr);
+    gap: 18px;
+}
+
+.profile-card {
+    text-align: center;
+    padding: 28px;
+}
+
+.profile-avatar {
+    height: 70px;
+    width: 70px;
+    border-radius: 23px;
+    background: linear-gradient(135deg, #d9b6ff, #8066e8);
+    color: #201537;
+    display: grid;
+    place-items: center;
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 auto 13px;
+}
+
+.profile-card h2 {
+    margin: 0 0 6px;
+    font: 600 19px "Space Grotesk", sans-serif;
+}
+
+.profile-card p {
+    color: #8794a8;
+    font-size: 11px;
+    margin: 0;
+}
+
+.profile-badge {
+    display: inline-block;
+    border: 1px solid #494067;
+    color: #c1afff;
+    border-radius: 20px;
+    padding: 6px 10px;
+    font-size: 10px;
+    margin-top: 15px;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 13px 0;
+    border-bottom: 1px solid #273143;
+    font-size: 11px;
+}
+
+.detail-row:last-child {
+    border-bottom: 0;
+}
+
+.detail-row span {
+    color: #8996aa;
+}
+
+
+/* 10. FORMS & INPUT FIELDS */
+
+.form-label,
+form label {
+    display: grid;
+    gap: 7px;
+    color: #aab6c8;
+    font-size: 11px;
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+
+form input,
+form select {
+    width: 100%;
+    border: 1px solid #303c50;
+    background: #0f1621;
+    color: #eef3fb;
+    border-radius: 9px;
+    padding: 11px 12px;
+    outline: none;
+}
+
+form input:focus,
+form select:focus {
+    border-color: #9d86f5;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+
+/* 11. MODALS & NOTIFICATIONS */
+
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: #05070bd9;
+    z-index: 30;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.modal {
+    width: min(440px, 100%);
+    position: relative;
+    background: #151d2a;
+    border: 1px solid #344056;
+    border-radius: 17px;
+    padding: 26px;
+    box-shadow: 0 25px 90px #0008;
+}
+
+.modal-close {
+    position: absolute;
+    right: 15px;
+    top: 13px;
+    border: 0;
+    background: none;
+    color: #aab5c7;
+    font-size: 25px;
+}
+
+.modal-kicker {
+    font-size: 9px;
+    letter-spacing: 1.6px;
+    color: #b5a0ff;
+    font-weight: 700;
+}
+
+.modal h2 {
+    font: 600 24px "Space Grotesk", sans-serif;
+    margin: 9px 0;
+}
+
+.muted {
+    color: #8794a8;
+    font-size: 11px;
+    line-height: 1.5;
+    margin-bottom: 22px;
+}
+
+.toast {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #1e302c;
+    border: 1px solid #3a6657;
+    color: #a3f0d1;
+    padding: 13px 17px;
+    border-radius: 10px;
+    z-index: 40;
+    font-size: 12px;
+    box-shadow: 0 8px 30px #0005;
+}
+
+
+/* 12. WISHLIST */
+
+.wishlist-intro {
+    padding: 20px;
+    border: 1px solid #3a3156;
+    border-radius: 13px;
+    background: linear-gradient(120deg, #211b35, #151b28);
+    margin-bottom: 20px;
+}
+
+.wishlist-intro h2 {
+    font: 600 17px "Space Grotesk", sans-serif;
+    margin: 0 0 6px;
+}
+
+.wishlist-intro p {
+    font-size: 11px;
+    color: #9b9ab3;
+    margin: 0;
+}
+
+.mini-tag {
+    color: #b5a0ff;
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 9px;
+}
+
+
+/* 13. AUTHENTICATION PAGES */
+
+.auth-wrap {
+    min-height: 65vh;
+    display: grid;
+    place-items: center;
+    padding: 25px 0;
+}
+
+.auth-card {
+    width: min(440px, 100%);
+    padding: 30px;
+}
+
+.auth-brand {
+    padding: 0;
+    margin-bottom: 32px;
+}
+
+.auth-card h1 {
+    font: 600 27px "Space Grotesk", sans-serif;
+    letter-spacing: -0.8px;
+    margin: 9px 0;
+}
+
+.auth-description {
+    color: #8996aa;
+    font-size: 12px;
+    line-height: 1.6;
+    margin: 0 0 23px;
+}
+
+.auth-switch {
+    font-size: 11px;
+    text-align: center;
+    color: #8d9aaf;
+    margin: 19px 0;
+}
+
+.auth-switch .quiet-link {
+    margin-left: 4px;
+}
+
+.auth-disclaimer {
+    font-size: 10px;
+    line-height: 1.5;
+    color: #758197;
+    text-align: center;
+    border-top: 1px solid #273143;
+    padding-top: 15px;
+    margin: 0 0 13px;
+}
+
+
+/* 14. RESPONSIVE LAYOUT: TABLETS */
+
+@media (max-width: 1100px) {
+    .game-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .page-content {
+        padding: 27px 25px;
+    }
+
+    .topbar {
+        padding: 0 25px;
+    }
+
+    .content-two {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* 15. RESPONSIVE LAYOUT: MOBILE */
+
+@media (max-width: 760px) {
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.2s;
+        box-shadow: 15px 0 40px #0005;
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .main-area {
+        margin-left: 0;
+    }
+
+    .mobile-menu {
+        display: block;
+        border: 1px solid #2b3546;
+        background: #151d2a;
+        color: #fff;
+        border-radius: 8px;
+        padding: 7px 10px;
+    }
+
+    .topbar {
+        height: 65px;
+        padding: 0 15px;
+        justify-content: flex-start;
+    }
+
+    .breadcrumb {
+        flex: 1;
+    }
+
+    .topbar-actions {
+        gap: 8px;
+    }
+
+    .search-box {
+        width: min(38vw, 190px);
+    }
+
+    .icon-button {
+        display: none;
+    }
+
+    .page-content {
+        padding: 24px 15px 35px;
+    }
+
+    .page-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .page-heading h1 {
+        font-size: 25px;
+    }
+
+    .game-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .game-cover {
+        height: 120px;
+    }
+
+    .stats-grid {
+        gap: 9px;
+    }
+
+    .stat-card {
+        padding: 13px;
+    }
+
+    .stat-value {
+        font-size: 23px;
+    }
+
+    .footer {
+        padding: 15px;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .profile-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .panel {
+        padding: 15px;
+    }
+}
+
+
+/* RESPONSIVE LAYOUT: SMALL PHONES */
+
+@media (max-width: 390px) {
+    .search-box {
+        width: 135px;
+    }
+
+    .game-cover {
+        height: 100px;
+    }
+
+    .game-title {
+        font-size: 11px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}

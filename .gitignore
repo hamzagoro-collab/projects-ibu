@@ -1,0 +1,25 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+config/secrets.*
+backend/config/local.*
+
+# Dependencies
+node_modules/
+vendor/
+
+# Logs
+*.log
+logs/
+
+# Build / generated files
+dist/
+build/
+coverage/
+
+# Editor / operating system
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
