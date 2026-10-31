@@ -1,0 +1,39 @@
+<div class="view">
+  <div class="page-heading">
+    <div>
+      <div class="eyebrow">ADMINISTRATION</div>
+      <h1>Admin dashboard</h1>
+      <p>Simulated user management for the prototype.</p>
+    </div>
+    <a class="secondary-button" href="#dashboard-main">← Back to the app</a>
+  </div>
+
+  <section class="stats-grid admin-stats">
+    <div class="stat-card">
+      <div class="stat-top"><span>Total users</span><span class="stat-icon">◉</span></div>
+      <div class="stat-value" data-bind="user-count">0</div>
+      <div class="stat-note">Registered accounts</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-top"><span>Games in catalog</span><span class="stat-icon">▦</span></div>
+      <div class="stat-value" data-bind="catalog-count">0</div>
+      <div class="stat-note">Shared by all users</div>
+    </div>
+  </section>
+
+  <div class="panel">
+    <h2>User management</h2>
+    <form id="user-search-form" class="admin-search">
+      <label>Username<input type="text" id="search-username" placeholder="e.g. playerone" required></label>
+      <button class="primary-button" type="submit">Search</button>
+    </form>
+    <div id="user-result" class="admin-result" style="display:none;">
+      <div class="detail-row"><span>Username</span><strong id="result-username"></strong></div>
+      <div class="detail-row"><span>Email</span><strong id="result-email"></strong></div>
+      <div class="admin-actions">
+        <button class="secondary-button" id="clear-collection-btn" type="button">Clear collection</button>
+        <button class="secondary-button danger" id="delete-account-btn" type="button">Delete account</button>
+      </div>
+    </div>
+  </div>
+</div>

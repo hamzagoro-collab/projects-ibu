@@ -1,0 +1,78 @@
+<div class="view">
+  <div class="page-heading">
+    <div>
+      <div class="eyebrow">YOUR PERSONAL GAME SPACE</div>
+      <h1>Your library, your adventure.</h1>
+      <p>A little progress every day adds up to a great collection.</p>
+    </div>
+    <button class="primary-button js-open-add">＋ Add a game</button>
+  </div>
+
+  <section class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-top"><span>Games in library</span><span class="stat-icon">▦</span></div>
+      <div class="stat-value" data-bind="total">0</div>
+      <div class="stat-note">Across your collection</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-top"><span>Currently playing</span><span class="stat-icon">◷</span></div>
+      <div class="stat-value" data-bind="playing">0</div>
+      <div class="stat-note">Games in progress</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-top"><span>Completed</span><span class="stat-icon">✓</span></div>
+      <div class="stat-value" data-bind="completed">0</div>
+      <div class="stat-note">Ready for the next quest</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-top"><span>On your wishlist</span><span class="stat-icon">♡</span></div>
+      <div class="stat-value" data-bind="wishlist">0</div>
+      <div class="stat-note">Next up to explore</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Recently added</h2>
+      <a class="quiet-link" href="#library-main">View all games →</a>
+    </div>
+    <div class="game-grid" data-slot="recent-games"></div>
+  </section>
+
+  <section class="content-two">
+    <div class="panel">
+      <h2>Recently in your collection</h2>
+      <div class="activity-list" data-slot="activity"></div>
+    </div>
+    <div class="panel">
+      <h2>Collection progress</h2>
+      <div class="progress-row" data-progress="Completed">
+        <div class="progress-label"><span>Completed</span><span data-progress-text></span></div>
+        <div class="progress-track"><div class="progress-fill" data-progress-fill></div></div>
+      </div>
+      <div class="progress-row" data-progress="Playing">
+        <div class="progress-label"><span>Playing</span><span data-progress-text></span></div>
+        <div class="progress-track"><div class="progress-fill" data-progress-fill></div></div>
+      </div>
+      <div class="progress-row" data-progress="Want to play">
+        <div class="progress-label"><span>Want to play</span><span data-progress-text></span></div>
+        <div class="progress-track"><div class="progress-fill" data-progress-fill></div></div>
+      </div>
+      <div class="api-note">
+        <span class="spark">✦</span>
+        <div>
+          <strong>Discover more games</strong>
+          <p>A game database API is planned for a later milestone to help you find titles and cover art.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel genre-panel">
+    <h2>Games by genre</h2>
+    <div class="genre-layout">
+      <div class="genre-chart"><canvas data-genre-chart aria-label="Games by genre chart"></canvas></div>
+      <div class="genre-list" data-slot="genre-list"></div>
+    </div>
+  </section>
+</div>
