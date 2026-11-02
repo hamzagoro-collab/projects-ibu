@@ -1,0 +1,24 @@
+/* SPApp routing: only the section matching the URL hash is visible. */
+main#spapp > section {
+    display: none;
+    width: 100%;
+}
+
+/* The last section is shown when there is no hash yet (the landing page). */
+main#spapp > section:last-child {
+    display: block;
+}
+
+@keyframes appear {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+main#spapp > section:target {
+    display: block;
+    animation: appear 0.15s linear 1;
+}
+
+main#spapp > section:target ~ * {
+    display: none;
+}

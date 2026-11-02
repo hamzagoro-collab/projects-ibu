@@ -1,0 +1,44 @@
+<div class="view">
+  <div class="page-heading">
+    <div>
+      <div class="eyebrow">PLAYER SETTINGS</div>
+      <h1>Account settings</h1>
+      <p>Manage your GameVault account details.</p>
+    </div>
+  </div>
+
+  <div class="profile-layout">
+    <div class="panel profile-card">
+      <div class="profile-avatar">P</div>
+      <h2>Player One</h2>
+      <p>Game enthusiast · Member since today</p>
+      <span class="profile-badge">✦ Free account</span>
+      <div style="margin-top:22px">
+        <div class="stat-card">
+          <div class="stat-top"><span>Games collected</span><span class="stat-icon">▦</span></div>
+          <div class="stat-value" data-bind="total">0</div>
+          <div class="stat-note">Your personal library</div>
+        </div>
+      </div>
+    </div>
+    <div class="panel">
+      <h2>Account overview</h2>
+      <form id="profile-form">
+        <label>Username<input type="text" id="profile-username" name="username" value="playerone" required maxlength="50"></label>
+        <label>Email address<input type="email" id="profile-email" name="email" value="player1@example.com" required></label>
+        <div class="form-row">
+          <label>New password<input type="password" id="profile-password" name="password" minlength="6" placeholder="Leave blank to keep current"></label>
+          <label>Confirm new password<input type="password" id="profile-confirm" name="confirm-password" minlength="6"></label>
+        </div>
+        <button class="primary-button" type="submit">Save changes</button>
+      </form>
+      <div class="api-note">
+        <span class="spark">ⓘ</span>
+        <div>
+          <strong>Prototype account</strong>
+          <p>Profile details are sample content. Saving will be connected to the backend in a later milestone.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

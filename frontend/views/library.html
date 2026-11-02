@@ -1,0 +1,28 @@
+<div class="view">
+  <div class="page-heading">
+    <div>
+      <div class="eyebrow">THE COLLECTION</div>
+      <h1>My game library</h1>
+      <p>All your games in one place. Keep track of what you're playing.</p>
+    </div>
+    <button class="primary-button js-open-add">＋ Add a game</button>
+  </div>
+
+  <div class="toolbar">
+    <select class="filter-select" id="status-filter" aria-label="Filter by status">
+      <option value="All">All statuses</option>
+      <option>Playing</option>
+      <option>Completed</option>
+      <option>Want to play</option>
+    </select>
+    <select class="filter-select" id="sort-filter" aria-label="Sort games">
+      <option value="recent">Recently added</option>
+      <option value="az">Title A–Z</option>
+      <option value="year">Release year</option>
+    </select>
+    <span class="toolbar-spacer"></span>
+    <span class="muted" data-bind="shown-count">0 games shown</span>
+  </div>
+
+  <div class="game-grid library-grid" id="library-games"></div>
+</div>
