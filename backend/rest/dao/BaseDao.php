@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . "/../config/config.php";
+require_once __DIR__ . "/../../config/config.php";
 
 /**
  * Generic data access object. Every entity DAO extends this class and only has
@@ -23,12 +23,20 @@ class BaseDao
                 Config::DB_PASSWORD(),
                 [
                     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-                    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+                    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+                    PDO::ATTR_EMULATE_PREPARES => false,   // native prepares: ints stay ints in JSON
+                    PDO::ATTR_STRINGIFY_FETCHES => false
                 ]
             );
         } catch (PDOException $e) {
             throw $e;
         }
+    }
+
+    /** Name of the primary-key column (user_id, game_id, ...). */
+    public function get_primary_key()
+    {
+        return $this->primary_key;
     }
 
     protected function query($query, $params)

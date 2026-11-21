@@ -1,0 +1,16 @@
+Options -Indexes
+RewriteEngine On
+RewriteCond %{HTTP:Authorization} .
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+# Make the Authorization header available to PHP under Apache/CGI
+RewriteCond %{HTTP:Authorization} ^(.*)
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%1]
+
+# Code, configuration and libraries are never served as files
+RewriteRule ^(config|vendor|rest|utils|middleware|tests)(/|$) - [F,L]
+
+# Send everything that is not a real file to the FlightPHP front controller
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]

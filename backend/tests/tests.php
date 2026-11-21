@@ -11,11 +11,11 @@
  * imported first.
  */
 
-require_once __DIR__ . '/../dao/UserDao.php';
-require_once __DIR__ . '/../dao/GenreDao.php';
-require_once __DIR__ . '/../dao/PlatformDao.php';
-require_once __DIR__ . '/../dao/GameDao.php';
-require_once __DIR__ . '/../dao/UserGameDao.php';
+require_once __DIR__ . '/../rest/dao/UserDao.php';
+require_once __DIR__ . '/../rest/dao/GenreDao.php';
+require_once __DIR__ . '/../rest/dao/PlatformDao.php';
+require_once __DIR__ . '/../rest/dao/GameDao.php';
+require_once __DIR__ . '/../rest/dao/UserGameDao.php';
 
 $is_cli = PHP_SAPI === 'cli';
 $nl = $is_cli ? PHP_EOL : '<br/>';
