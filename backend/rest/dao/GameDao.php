@@ -50,6 +50,28 @@ class GameDao extends BaseDao
         );
     }
 
+    /** One catalog game together with the name of its genre, or false. */
+    public function get_by_id_with_genre($id)
+    {
+        return $this->query_unique(
+            'SELECT g.*, ge.name AS genre_name
+             FROM ' . $this->table_name . ' g
+             LEFT JOIN genres ge ON ge.genre_id = g.genre_id
+             WHERE g.game_id = :id',
+            ['id' => $id]
+        );
+    }
+
+    /** Number of catalog games that belong to the genre. */
+    public function count_by_genre($genre_id)
+    {
+        $row = $this->query_unique(
+            'SELECT COUNT(*) AS total FROM ' . $this->table_name . ' WHERE genre_id = :id',
+            ['id' => $genre_id]
+        );
+        return (int) $row['total'];
+    }
+
     public function add_game($params)
     {
         return $this->add($params);

@@ -37,6 +37,25 @@ class UserGameDao extends BaseDao
         );
     }
 
+    /** Number of collection entries that use the platform. */
+    public function count_by_platform($platform_id)
+    {
+        $row = $this->query_unique(
+            'SELECT COUNT(*) AS total FROM ' . $this->table_name . ' WHERE platform_id = :id',
+            ['id' => $platform_id]
+        );
+        return (int) $row['total'];
+    }
+
+    /** One collection entry with game, genre and platform details, or false. */
+    public function get_detail_by_id($user_game_id)
+    {
+        return $this->query_unique(
+            self::DETAIL_SELECT . ' WHERE ug.user_game_id = :id',
+            ['id' => $user_game_id]
+        );
+    }
+
     /** $status must be 'Playing', 'Completed' or 'Want to play'. */
     public function get_by_status($user_id, $status)
     {

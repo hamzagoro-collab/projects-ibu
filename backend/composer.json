@@ -1,0 +1,14 @@
+{
+  "name": "gamevault/backend",
+  "description": "GameVault REST API (FlightPHP)",
+  "type": "project",
+  "require": {
+    "php": ">=8.2",
+    "ext-curl": "*",
+    "ext-mbstring": "*",
+    "ext-pdo": "*",
+    "flightphp/core": "^3.0",
+    "firebase/php-jwt": "^7.0",
+    "zircote/swagger-php": "6.12"
+  }
+}
